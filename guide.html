@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide d'installation et de prise en main — Ono-Sendai</title>
+<meta name="description" content="Installer Ono-Sendai pas à pas (OpenCode, fournisseur de modèles, app Mac ou navigateur, whisper.cpp), puis ta première tâche IA, ton premier mémoire et ton premier cours. Dépannage inclus.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Ono-Sendai">
+<meta property="og:title" content="Guide pas à pas — Ono-Sendai">
+<meta property="og:description" content="De zéro à ta première tâche, ton premier mémoire et ton premier cours. Même si tu n'as jamais ouvert un terminal.">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Ono-Sendai, page d'accueil">
+      <svg class="brand-mark" viewBox="0 0 1027 1000" aria-hidden="true" focusable="false"><path fill="currentColor" pathLength="1" d="M135 0 L315 0 L1027 1000 L847 1000 L483 489 L171 1000 L0 1000 L391 360 Z"/></svg>
+      <span>Ono-Sendai</span>
+    </a>
+    <nav class="nav" aria-label="Sommaire du guide">
+      <a href="#installation">Installer</a>
+      <a href="#premiere-tache">IA</a>
+      <a href="#premier-memoire">Mémoire</a>
+      <a href="#premier-cours">Cours</a>
+      <a href="#depannage">Dépannage</a>
+    </nav>
+    <a class="btn ghost sm header-cta" href="index.html">← Accueil</a>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="section guide" id="utilisation" aria-labelledby="usage-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Guide pas à pas</p>
+          <h1 id="usage-title" class="guide-h1">De zéro à ta première tâche, ton premier mémoire et ton premier cours</h1>
+        </div>
+        <p class="section-note">Un tutoriel complet, sans étape sautée. Même si tu n'as jamais ouvert un terminal.</p>
+      </div>
+
+      <div class="callout" aria-labelledby="prereq-title">
+        <p class="callout-label">Avant de commencer</p>
+        <h3 id="prereq-title">Ce qu'il te faut</h3>
+        <p>Tu n'as besoin d'aucune expérience. Il faut juste un peu de temps et un compte chez un fournisseur d'IA.</p>
+        <ul class="need-list">
+          <li>
+            <span class="need-key">Ordinateur</span>
+            <span>Un Mac Apple Silicon pour l'app&nbsp;; sinon un PC Windows, une machine Linux ou un Mac Intel, avec Node.js 18 ou plus.</span>
+          </li>
+          <li>
+            <span class="need-key">Connexion</span>
+            <span>Une connexion internet pour télécharger les fichiers et utiliser les modèles.</span>
+          </li>
+          <li>
+            <span class="need-key">Temps</span>
+            <span>Environ 15 minutes pour l'installation et la première tâche.</span>
+          </li>
+          <li>
+            <span class="need-key">Transcription</span>
+            <span>Pour enregistrer tes CM&nbsp;: whisper.cpp, installé une fois (voir «&nbsp;Ton premier cours&nbsp;»).</span>
+          </li>
+          <li>
+            <span class="need-key">Compte</span>
+            <span>Un compte chez un fournisseur d'IA. OpenCode Zen et OpenRouter proposent des modèles gratuits.</span>
+          </li>
+        </ul>
+        <p class="check-label">Checklist</p>
+        <ul class="checklist">
+          <li>J'ai un ordinateur compatible.</li>
+          <li>Je suis connecté à internet.</li>
+          <li>J'ai 15 minutes devant moi.</li>
+          <li>Je peux créer ou utiliser un compte fournisseur.</li>
+        </ul>
+      </div>
+
+      <h3 class="block-title">Le vocabulaire minimum</h3>
+      <p class="block-intro">Dix mots à connaître. Ils reviennent dans tout le reste du tutoriel.</p>
+      <dl class="glossary">
+        <div class="term">
+          <dt>Agent IA</dt>
+          <dd>Un programme qui comprend une demande en langage normal et agit pour toi : lire des fichiers, en écrire, lancer des commandes. Ici, c'est OpenCode qui fait tourner l'agent. Ono-Sendai te montre ce qu'il fait.</dd>
+        </div>
+        <div class="term">
+          <dt>Modèle</dt>
+          <dd>Le « cerveau » qui répond à ta demande. Par exemple Claude, GPT, DeepSeek ou un modèle gratuit. Chaque modèle a ses capacités et son prix.</dd>
+        </div>
+        <div class="term">
+          <dt>Fournisseur</dt>
+          <dd>Le service par lequel tu accèdes aux modèles : OpenCode Zen, OpenRouter, ou directement Anthropic, OpenAI, DeepSeek, Google… C'est ce service qui fournit l'accès et facture les modèles payants.</dd>
+        </div>
+        <div class="term">
+          <dt>Clé API</dt>
+          <dd>Un mot de passe personnel qui permet à l'application d'utiliser ton compte chez un fournisseur. On ne la partage jamais, même avec un camarade.</dd>
+        </div>
+        <div class="term">
+          <dt>Token</dt>
+          <dd>Un morceau de mot, environ 4 caractères. Les prix sont affichés en dollars par million de tokens, en entrée et en sortie. Une petite tâche coûte généralement quelques centimes avec un modèle payant, et rien avec un modèle gratuit.</dd>
+        </div>
+        <div class="term">
+          <dt>Dossier de projet</dt>
+          <dd>Le dossier de ton ordinateur sur lequel l'IA va travailler. Elle ne touche qu'à ce dossier. C'est là que se trouvent ton site, ton devoir ou tes fichiers.</dd>
+        </div>
+        <div class="term">
+          <dt>Terminal</dt>
+          <dd>Une fenêtre où l'on tape des commandes en texte plutôt que de cliquer. Tu n'en auras besoin qu'une fois ou deux dans ce tutoriel, en copiant-collant.</dd>
+        </div>
+        <div class="term">
+          <dt>git</dt>
+          <dd>Un historique des versions de tes fichiers. Il permet de voir ce qui a changé et de revenir en arrière. Ono-Sendai s'en sert pour afficher les modifications.</dd>
+        </div>
+        <div class="term">
+          <dt>Markdown</dt>
+          <dd>Du texte simple avec quelques signes pour la mise en forme : <span class="inline-code">**gras**</span>, <span class="inline-code">*italique*</span>, <span class="inline-code"># Titre</span>. Chaque section de ton mémoire est un fichier Markdown, lisible par n'importe quel éditeur de texte.</dd>
+        </div>
+        <div class="term">
+          <dt>DOI</dt>
+          <dd>L'identifiant unique d'un article ou d'un livre scientifique, du type <span class="inline-code">10.xxxx/…</span>. Il figure en général sur la première page de l'article. Ono-Sendai s'en sert pour remplir la fiche d'une source à ta place.</dd>
+        </div>
+      </dl>
+
+      <h3 class="block-title" id="installation">Installation, pas à pas</h3>
+      <p class="block-intro">Suis les étapes dans l'ordre. Ne passe pas à la suivante tant que tu n'as pas vu le résultat indiqué.</p>
+
+      <ol class="steps install-steps">
+        <li class="step">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Installer OpenCode et l'ouvrir</h3>
+            <p>Ono-Sendai ne fonctionne pas seul. Il lui faut l'app OpenCode, un agent de code IA, en version 2 ou plus.</p>
+            <p>Va sur <a href="https://opencode.ai" target="_blank" rel="noopener">opencode.ai</a>, télécharge l'app pour ton ordinateur et installe-la comme une application normale. Puis ouvre-la.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> la fenêtre de l'app OpenCode. Garde-la ouverte pour l'étape suivante.</p>
+          </div>
+        </li>
+
+        <li class="step">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Connecter un fournisseur</h3>
+            <p>C'est OpenCode qui parle aux modèles d'IA, via un fournisseur. Dans l'app OpenCode, connecte un fournisseur.</p>
+            <p>Trois possibilités : <strong>OpenCode Zen</strong>, le fournisseur d'OpenCode, qui propose des modèles gratuits ; <strong>OpenRouter</strong>, qui donne accès à des centaines de modèles, dont certains gratuits ; ou directement l'<strong>API d'Anthropic, d'OpenAI, de DeepSeek ou de Google</strong>.</p>
+            <p>La plupart des fournisseurs demandent une clé API : un mot de passe personnel qui permet à l'app d'utiliser ton compte. On ne la partage jamais.</p>
+            <p class="subhead">Exemple avec OpenRouter</p>
+            <ol class="mini-steps">
+              <li>Crée un compte sur <a href="https://openrouter.ai" target="_blank" rel="noopener">openrouter.ai</a>.</li>
+              <li>Va dans la page des clés, appelée « Keys ».</li>
+              <li>Crée une clé, puis copie-la.</li>
+              <li>Colle cette clé dans OpenCode quand il te la demande.</li>
+            </ol>
+            <p class="see"><span class="see-label">Tu dois voir :</span> une longue suite de caractères au moment de créer la clé. C'est ta clé API. Elle ne s'affiche souvent qu'une seule fois : copie-la tout de suite.</p>
+            <p>Les modèles payants demandent d'ajouter du crédit, c'est-à-dire de l'argent prépayé sur ton compte. Commence avec les modèles gratuits et fixe une limite de dépense.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> dans OpenCode, ton fournisseur apparaît comme connecté et des modèles sont disponibles. Tu peux ensuite fermer OpenCode.</p>
+          </div>
+        </li>
+
+        <li class="step">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Lancer Ono-Sendai</h3>
+            <p>Choisis la méthode qui correspond à ton ordinateur. Les deux mènent au même résultat.</p>
+
+            <div class="install-tabs" data-tabs>
+              <div class="tablist" role="tablist" aria-label="Choisir la méthode de lancement" aria-orientation="horizontal">
+                <button class="launch-tab" type="button" role="tab" id="tab-mac" aria-controls="panel-mac" aria-selected="true" tabindex="0">Mac Apple Silicon</button>
+                <button class="launch-tab" type="button" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false" tabindex="-1">Windows, Linux ou Mac Intel</button>
+              </div>
+
+              <div class="tab-panel" role="tabpanel" id="panel-mac" aria-labelledby="tab-mac" tabindex="0">
+                <h4 class="panel-title">Vérifier que tu as bien un Mac Apple Silicon</h4>
+                <p>Ouvre le menu Pomme, en haut à gauche de l'écran, puis « À propos de ce Mac ». Regarde la ligne « Puce ». Si elle commence par « Apple », tu es au bon endroit. Si elle indique Intel, utilise l'autre onglet.</p>
+                <p class="subhead">Installer l'app</p>
+                <ol class="mini-steps">
+                  <li>Télécharge Ono-Sendai depuis <a href="[LIEN DE TÉLÉCHARGEMENT]" target="_blank" rel="noopener">[LIEN DE TÉLÉCHARGEMENT]</a>.</li>
+                  <li>Double-clique sur le fichier .zip téléchargé pour le dézipper.</li>
+                  <li>Glisse Ono-Sendai.app dans le dossier Applications.</li>
+                  <li>Ouvre le dossier Applications, puis double-clique sur Ono-Sendai.app.</li>
+                </ol>
+                <p>L'app n'est pas signée par Apple. À la première ouverture, macOS la bloque. Ce n'est pas un virus : c'est le contrôle de sécurité de macOS pour les apps qui ne viennent pas de l'App Store.</p>
+                <ol class="mini-steps">
+                  <li>Ouvre Réglages Système, puis Confidentialité et sécurité.</li>
+                  <li>Descends jusqu'au message au sujet d'Ono-Sendai.</li>
+                  <li>Clique sur « Ouvrir quand même », puis confirme avec ton mot de passe ou Touch ID.</li>
+                </ol>
+                <p>Si macOS dit que l'app « est endommagée », ouvre l'app Terminal (Cmd+Espace, tape « Terminal », Entrée), colle la commande ci-dessous et appuie sur Entrée. Puis relance Ono-Sendai.</p>
+                <span class="cmd wide">
+                  <code>xattr -dr com.apple.quarantine /Applications/Ono-Sendai.app</code>
+                  <button class="copy" type="button" data-copy="xattr -dr com.apple.quarantine /Applications/Ono-Sendai.app" aria-label="Copier la commande xattr">copier</button>
+                </span>
+                <p class="see"><span class="see-label">Tu dois voir :</span> l'animation de lancement, puis l'écran de choix avec trois cercles&nbsp;: IA, Mémoire et Cours.</p>
+              </div>
+
+              <div class="tab-panel" role="tabpanel" id="panel-web" aria-labelledby="tab-web" tabindex="0">
+                <h4 class="panel-title">Installer Node.js</h4>
+                <p>Node.js est le programme qui fait tourner Ono-Sendai dans ton navigateur. Il te faut la version 18 ou plus.</p>
+                <ol class="mini-steps">
+                  <li>Va sur <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>.</li>
+                  <li>Choisis la version « LTS », c'est-à-dire la version stable.</li>
+                  <li>Installe-la avec les options par défaut.</li>
+                </ol>
+                <p class="see"><span class="see-label">Tu dois voir :</span> l'installation de Node.js se termine sans erreur.</p>
+                <p class="subhead">Lancer Ono-Sendai</p>
+                <ol class="mini-steps">
+                  <li>Télécharge le dossier Ono-Sendai depuis <a href="[LIEN DE TÉLÉCHARGEMENT]" target="_blank" rel="noopener">[LIEN DE TÉLÉCHARGEMENT]</a>, puis dézippe-le.</li>
+                  <li><strong>Windows</strong> : ouvre le dossier et double-clique sur <span class="inline-code">start.bat</span>. Si Windows affiche « Windows a protégé votre ordinateur », clique sur « Informations complémentaires » puis « Exécuter quand même ».</li>
+                  <li><strong>Mac Intel ou Linux</strong> : ouvre le Terminal, tape <span class="inline-code">sh</span> suivi d'un espace, glisse le fichier <span class="inline-code">start.sh</span> du dossier dans la fenêtre du Terminal (son chemin s'écrit tout seul), puis appuie sur Entrée.</li>
+                </ol>
+                <p>Une fenêtre noire reste ouverte : c'est le programme qui fait tourner Ono-Sendai. Laisse-la ouverte pendant tout ton travail ; la fermer arrête Ono-Sendai.</p>
+                <p>L'interface s'ouvre dans ton navigateur à l'adresse <span class="inline-code">http://localhost:7777</span>. C'est une adresse locale : elle ne fonctionne que sur ton ordinateur, pas sur internet. Si la page ne s'ouvre pas seule, tape l'adresse toi-même.</p>
+                <p class="see"><span class="see-label">Tu dois voir :</span> l'écran de choix d'Ono-Sendai dans le navigateur (trois cercles&nbsp;: IA, Mémoire et Cours), et la fenêtre noire toujours ouverte.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="step">
+          <span class="step-num">04</span>
+          <div>
+            <h3>Choisir un espace et vérifier la connexion</h3>
+            <p>Au démarrage, le λ se trace et le nom ONO-SENDAI se déchiffre. Appuie sur une touche pour passer l'animation.</p>
+            <p>Trois cercles se dessinent sous le nom : <strong>IA</strong>, avec un petit réseau de points, <strong>Mémoire</strong>, avec un livre ouvert, et <strong>Cours</strong>. Clique sur l'un d'eux, ou appuie sur la touche <kbd>1</kbd>, <kbd>2</kbd> ou <kbd>3</kbd>. Plus tard, <kbd>Alt</kbd>+<kbd>1</kbd>, <kbd>Alt</kbd>+<kbd>2</kbd> et <kbd>Alt</kbd>+<kbd>3</kbd>, ou l'interrupteur en haut, font passer d'un espace à l'autre.</p>
+            <p>Pour vérifier la connexion, entre dans l'espace IA et regarde en bas à gauche.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> « Connecté à opencode » en bas à gauche de l'espace IA. Si tu lis « opencode injoignable », vérifie qu'OpenCode est bien installé et que tu l'as ouvert au moins une fois, puis relance Ono-Sendai.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="block-title" id="premiere-tache">Ta première tâche</h3>
+      <p class="block-intro">L'interface est ouverte. On va faire une première tâche simple, sans risque, pour découvrir les éléments dans l'ordre.</p>
+
+      <ol class="tutorial">
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">01</p>
+            <h3>Choisis le dossier du projet</h3>
+            <p>Sur l'écran de choix, entre dans l'espace IA : le premier cercle, ou la touche <kbd>1</kbd>.</p>
+            <p>En haut à gauche, repère la zone « Projet ». Clique sur le bouton « Choisir… ».</p>
+            <p>Une fenêtre s'ouvre. Sélectionne le dossier sur lequel l'IA doit travailler, par exemple le dossier de ton site ou de ton devoir. L'IA ne touchera qu'à ce dossier.</p>
+            <p>Conseil : commence avec une copie du dossier, ou avec un dossier de test. Tu pourras tout casser sans perdre ton vrai travail.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> le chemin du dossier choisi dans la zone « Projet ».</p>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">02</p>
+            <h3>Choisis le mode</h3>
+            <p>Le mode décide de ce que l'IA a le droit de faire.</p>
+            <p><strong>Coder</strong> : l'IA peut modifier les fichiers. <strong>Planifier</strong> : elle réfléchit et propose une solution sans rien modifier, idéal pour débuter. <strong>Recherche</strong> : elle explore et cherche de l'information. <strong>Discussion</strong> : une simple conversation.</p>
+            <p>Pour ta première tâche, choisis « Planifier ». Tu verras ce que l'IA propose sans aucun changement dans tes fichiers.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> « Planifier » mis en évidence dans le sélecteur de mode.</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette du sélecteur de mode avec Coder, Planifier, Recherche et Discussion. Planifier est sélectionné.">
+            <div class="mock-head"><span>Mode</span><span>4 choix</span></div>
+            <div class="mock-body">
+              <div class="chips">
+                <span class="chip">Coder</span>
+                <span class="chip on">Planifier</span>
+                <span class="chip">Recherche</span>
+                <span class="chip">Discussion</span>
+              </div>
+              <span class="micro">Planifier · lecture seule</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">03</p>
+            <h3>Choisis le modèle</h3>
+            <p>Ouvre la liste déroulante des modèles. En tête, tu trouves le groupe « Top 10 OpenRouter (semaine) », les modèles les plus utilisés en ce moment, puis le groupe « Gratuits ».</p>
+            <p>Le prix est affiché à côté de chaque modèle, en dollars par million de tokens : le premier chiffre pour ce que tu envoies, le second pour ce que le modèle écrit.</p>
+            <p>Quand un modèle propose un niveau de réflexion, une deuxième liste apparaît à côté. Plus il est haut, plus le modèle réfléchit, et plus c'est lent et cher. Pour débuter, un modèle gratuit suffit très bien.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> le nom du modèle choisi dans la liste. Ton choix est mémorisé pour la prochaine fois.</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette de la liste des modèles avec le top 10 de la semaine, un groupe Gratuits et des prix.">
+            <div class="mock-head"><span>Modèle</span><span class="accent">Liste</span></div>
+            <div class="mock-body">
+              <p class="mock-label">Top 10 OpenRouter (semaine)</p>
+              <div class="model-row"><span>Modèle A</span><span class="price">0,14 / 0,28 $</span></div>
+              <div class="model-row"><span>Modèle B</span><span class="price">3 / 15 $</span></div>
+              <p class="mock-label">Gratuits</p>
+              <div class="model-row"><span>Modèle C</span><span class="price">gratuit</span></div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">04</p>
+            <h3>Règle les autorisations</h3>
+            <p>Les autorisations décident si l'IA doit te demander la permission avant d'agir.</p>
+            <p><strong>Sur demande</strong> : l'IA demande avant chaque modification de fichier et chaque commande. C'est recommandé pour débuter. <strong>Modifs auto</strong> : elle modifie seule les fichiers, mais demande avant les commandes. <strong>Auto</strong> : elle ne demande rien.</p>
+            <p>Quand elle a besoin d'une autorisation, une demande apparaît en carte dans la conversation, avec les boutons « Autoriser » et « Refuser ».</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> « Sur demande » sélectionné. Plus tard, une carte d'autorisation apparaîtra dans la conversation si l'IA veut modifier un fichier.</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette d'une carte d'autorisation avec les boutons Autoriser et Refuser.">
+            <div class="mock-head"><span>Autorisation</span><span>Sur demande</span></div>
+            <div class="mock-body">
+              <div class="perm">
+                <div>
+                  <span class="perm-label">Autorisation demandée</span>
+                  <span class="perm-q">Écrire dans index.html ?</span>
+                </div>
+                <div class="perm-actions"><span>Autoriser</span><span>Refuser</span></div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">05</p>
+            <h3>Ajoute des mods, si tu veux</h3>
+            <p>Le bouton « Mods », à côté des autorisations, ouvre une liste de consignes métier classées par catégorie : Marketing, Management, Management du sport, Finance, Comptabilité. Coche-en une ou plusieurs : elles orientent n'importe quel modèle, sans en changer.</p>
+            <p>Pour ta première tâche, tu peux laisser les mods de côté.</p>
+            <p>Le bouton « Ouvrir le dossier », en bas de la liste, permet d'ajouter tes propres mods. Ce sont de simples fichiers texte avec l'extension .md. Un sous-dossier correspond à une catégorie.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> le bouton affiche le mod choisi, par exemple « Mod · Marketing », ou le nombre de mods cochés, par exemple « Mods · 2 ».</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette de la liste des mods : Marketing et Finance cochés, et le bouton affiche Mods · 2.">
+            <div class="mock-head"><span>Mods</span><span class="accent">2 cochés</span></div>
+            <div class="mock-body">
+              <p class="mock-label">Business</p>
+              <div class="mod-grid">
+                <span class="mod">Management</span>
+                <span class="mod on">Marketing</span>
+              </div>
+              <p class="mock-label">Finance</p>
+              <div class="mod-grid">
+                <span class="mod">Comptabilité</span>
+                <span class="mod on">Finance</span>
+              </div>
+              <span class="mock-btn">Mods · 2</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">06</p>
+            <h3>Écris ta demande</h3>
+            <p>En bas de l'écran, clique dans la zone de texte et écris ta demande en français normal. Appuie sur Entrée pour envoyer. Maj+Entrée va à la ligne sans envoyer.</p>
+            <p>Trois premières demandes simples, si tu ne sais pas quoi écrire :</p>
+            <ul class="example-list">
+              <li><span class="example-q">Explique-moi ce que contient ce dossier</span></li>
+              <li><span class="example-q">Crée une page web index.html qui présente mon association de foot</span></li>
+              <li><span class="example-q">Corrige les fautes dans le fichier rapport.md</span></li>
+            </ul>
+            <p class="see"><span class="see-label">Tu dois voir :</span> ta demande apparaît dans la conversation, puis l'IA commence à répondre ou à travailler.</p>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">07</p>
+            <h3>Suis le travail et arrête-le si besoin</h3>
+            <p>Pendant le travail, la conversation montre ce que fait l'IA : ce qu'elle lit, ce qu'elle écrit et les commandes qu'elle lance.</p>
+            <p>Appuie sur Échap pour arrêter l'agent. Tu peux aussi annuler une demande : les fichiers reviennent alors à leur état d'avant.</p>
+            <p>Le coût de la tâche s'affiche en haut à droite, en dollars. Avec un modèle gratuit, il reste à zéro.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> des lignes d'actions dans la conversation et un coût affiché en haut à droite.</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette du coût d'une tâche affiché en haut à droite.">
+            <div class="mock-head"><span>En haut à droite</span><span class="accent">Cette tâche</span></div>
+            <div class="mock-body">
+              <div class="cost">
+                <span class="cost-item"><span class="big">0,18 $</span><span class="micro">cette tâche</span></span>
+                <span class="cost-item"><span class="big">1,42 $</span><span class="micro">aujourd'hui</span></span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">08</p>
+            <h3>Regarde ce qui a changé</h3>
+            <p>En haut à droite, un bouton comme « +12 −3 · 2 fichiers » montre les modifications. Les lignes ajoutées apparaissent en vert, les lignes supprimées en rouge.</p>
+            <p>Ce bouton n'apparaît que si le dossier est suivi par git. git est un historique des versions de tes fichiers : il permet de comparer et de revenir en arrière.</p>
+            <p>Si le dossier n'est pas suivi par git, tu peux demander à l'IA elle-même : « initialise git dans ce dossier ».</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> le bouton des modifications en haut à droite, avec le nombre de lignes ajoutées et supprimées.</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette du bouton des modifications : 12 lignes ajoutées, 3 supprimées, dans 2 fichiers.">
+            <div class="mock-head"><span>Modifications</span><span class="accent">git</span></div>
+            <div class="mock-body">
+              <div class="diff-foot">
+                <span><span class="plus">+12</span> <span class="minus">−3</span> · 2 fichiers</span>
+                <span class="right muted">ajoutées · supprimées</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="block-title" id="premier-memoire">Ton premier mémoire</h3>
+      <p class="block-intro">Même principe, dans l'espace Mémoire. Prévois un dossier vide : c'est là que vivra ton mémoire.</p>
+
+      <ol class="tutorial">
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">01</p>
+            <h3>Choisis un dossier vide</h3>
+            <p>Entre dans l'espace Mémoire : le deuxième cercle sur l'écran de choix, la touche <kbd>2</kbd>, ou <kbd>Alt</kbd>+<kbd>2</kbd> depuis un autre espace.</p>
+            <p>La première fois, l'app demande « Où ranger ton mémoire ? ». Clique sur « Choisir le dossier… » et sélectionne un dossier vide, par exemple <span class="inline-code">Documents/mon-memoire</span>. Tout ton mémoire sera rangé là, en fichiers ordinaires.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> le chemin du dossier, et le titre « Créer le mémoire dans ce dossier » au-dessus d'un petit formulaire.</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette de l'écran « Où ranger ton mémoire ? » avec le bouton Choisir le dossier.">
+            <div class="mock-head"><span>Espace Mémoire</span><span class="accent">1re fois</span></div>
+            <div class="mock-body">
+              <p class="mock-q">Où ranger ton mémoire&nbsp;?</p>
+              <span class="micro">Un dossier de fichiers Markdown, comme un coffre Obsidian.</span>
+              <span class="mock-btn">Choisir le dossier…</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">02</p>
+            <h3>Crée le mémoire</h3>
+            <p>Remplis le formulaire : le <strong>titre du mémoire</strong>, ta <strong>formation</strong> (par exemple « Master 2 Management du sport »), la <strong>date de rendu</strong> et ton <strong>objectif</strong> en mots (20 000 par défaut).</p>
+            <p>Dans « Normes de citation », garde « APA 7, adaptation française », sauf si ton mémoire est en anglais. Puis clique sur « Créer le mémoire ». Tout se modifie plus tard dans Réglages, la problématique comprise.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> le menu du mémoire à gauche, avec Plan, Carte mentale, Écrire, Sources et Réglages.</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette du formulaire de création : titre, formation, date de rendu, objectif de 20 000 mots, normes APA 7 adaptation française, bouton Créer le mémoire.">
+            <div class="mock-head"><span>Créer le mémoire</span><span class="accent">5 champs</span></div>
+            <div class="mock-body">
+              <div class="mock-field"><span>Titre du mémoire</span><b>Le lien club–supporter à l'ère des réseaux sociaux</b></div>
+              <div class="mock-field"><span>Formation</span><b>Master 2 Management du sport</b></div>
+              <div class="mock-split">
+                <div class="mock-field"><span>Date de rendu</span><b>15/03/2027</b></div>
+                <div class="mock-field"><span>Objectif (mots)</span><b>20000</b></div>
+              </div>
+              <div class="mock-field"><span>Normes de citation</span><b>APA 7, adaptation française ▾</b></div>
+              <span class="mock-btn on">Créer le mémoire</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">03</p>
+            <h3>Ajoute une source par DOI</h3>
+            <p>Ouvre la vue « Sources », puis clique sur « Par DOI ». Colle le DOI de l'article (ou son lien doi.org) et clique sur « Chercher » : la fiche se remplit toute seule.</p>
+            <p>Relis-la avant de l'ajouter. Les notices arrivent parfois avec un titre tout en majuscules : APA veut les titres d'articles en minuscules, sauf la première lettre et les noms propres. Tu as un export Zotero ? « Importer .bib / .json » ajoute tout d'un coup.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> la source dans la liste, déjà mise en forme en APA, avec sa clé (par exemple <span class="inline-code">lemaire2022</span> : le nom du premier auteur et l'année).</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette de l'ajout par DOI : un champ DOI ou lien doi.org, le bouton Chercher et un rappel de vérifier la notice.">
+            <div class="mock-head"><span>Sources</span><span class="accent">Par DOI</span></div>
+            <div class="mock-body">
+              <div class="mock-field"><span>DOI ou lien doi.org</span><b>10.xxxx/…</b></div>
+              <div class="mock-split"><span class="mock-btn on">Chercher</span><span class="mock-btn ghost">Annuler</span></div>
+              <span class="micro">La notice vient de doi.org (Crossref, DataCite). Vérifie-la avant d'ajouter&nbsp;: les titres y sont parfois en majuscules.</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">04</p>
+            <h3>Écris un paragraphe, et cite avec <span class="inline-code">[@</span></h3>
+            <p>Ouvre la vue « Écrire » et clique dans le texte : le paragraphe passe en Markdown, tu peux taper. Au moment de citer, tape <span class="inline-code">[@</span> : la liste de tes sources s'ouvre. Choisis la bonne : la clé s'écrit et le crochet se ferme tout seul. Pour une page : <span class="inline-code">[@lemaire2022, p. 52]</span>.</p>
+            <p>Clique ailleurs (ou <kbd>Échap</kbd>) : le paragraphe se réaffiche mis en page, avec la citation au format APA. L'enregistrement est automatique.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> la citation sous la forme (Auteur, année), par exemple « (Lemaire et al., 2022, p. 52) ».</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette de l'éditeur : en tapant [@, la liste des sources s'ouvre.">
+            <div class="mock-head"><span>Écrire</span><span class="accent">Markdown</span></div>
+            <div class="mock-body">
+              <p class="mock-serif">…ce que le club publie pèse sur son image [@le<span class="caret"></span></p>
+              <div class="mock-list"><span class="on"><b>@lemaire2022</b> (Lemaire et al., 2022) Les communautés de supporters…</span><span><b>@roussel2019</b> (Roussel, 2019) Le supporter connecté…</span></div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">05</p>
+            <h3>Sélectionne une phrase et clique sur « Vérifier »</h3>
+            <p>Sélectionne une phrase à la souris. Une barre apparaît : Vérifier, Relire, Sourcer, Reformuler, Jury, Demander. Clique sur « Vérifier ».</p>
+            <p>Le passage part au copilote, à droite. Il lit ta section, tes notes et ta bibliographie, puis répond. La phrase se colore selon son verdict : vert si elle est juste, orange s'il faut la nuancer, rouge s'il faut la corriger. Les boutons de la réponse remplacent le passage ou y ajoutent la citation.</p>
+            <p>Le copilote prend le modèle choisi dans sa propre liste, avec son prix : il te coûte comme une tâche de l'espace IA.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> la réponse du copilote à droite, et la phrase surlignée en vert, orange ou rouge.</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette de la barre de sélection et d'un verdict À nuancer.">
+            <div class="mock-head"><span>Sélection</span><span class="accent">Copilote</span></div>
+            <div class="mock-body">
+              <div class="chips"><span class="chip on">Vérifier</span><span class="chip">Relire</span><span class="chip">Sourcer</span><span class="chip">Reformuler</span><span class="chip">Jury</span><span class="chip">Demander…</span></div>
+              <p class="mock-serif"><span class="s v-weak">Aujourd'hui, tous les supporters suivent leur club sur Instagram.</span></p>
+              <span class="verdict weak">À nuancer</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="tut-step">
+          <div class="tut-copy">
+            <p class="tut-num">06</p>
+            <h3>Ouvre la carte mentale</h3>
+            <p>Ouvre la vue « Carte mentale » : ton mémoire y est dessiné à partir du plan, le titre au centre, les chapitres en branches, les sections au bout. « Carte » ou « Arbre » change la disposition.</p>
+            <p>Choisis un élément puis « + Idée » (ou <kbd>Tab</kbd>) pour y accrocher une idée. Glisse les éléments où tu veux. « Présenter » passe en plein écran, partie par partie avec les flèches ; <kbd>Échap</kbd> pour en sortir.</p>
+            <p class="see"><span class="see-label">Tu dois voir :</span> le titre de ton mémoire au centre de la carte, et tes chapitres autour.</p>
+          </div>
+          <div class="mock" role="img" aria-label="Maquette de la barre de la carte mentale : Carte, Arbre, + Idée, Exporter et Présenter.">
+            <div class="mock-head"><span>Carte mentale</span><span class="accent">Présenter</span></div>
+            <div class="mock-body">
+              <div class="chips"><span class="chip on">Carte</span><span class="chip">Arbre</span><span class="chip">+ Idée</span><span class="chip">Exporter…</span></div>
+              <span class="mock-btn">Présenter</span>
+              <span class="micro">Flèches pour avancer · Échap pour quitter</span>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="block-title" id="premier-cours">Ton premier cours</h3>
+      <p class="block-intro">L'espace Cours range un dossier par matière et une note Markdown par cours, avec trois onglets&nbsp;: Note, Fiche, Cartes.</p>
+
+      <ol class="tutorial">
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">01</p>
+            <h3>Installe whisper.cpp (si tu veux enregistrer tes CM)</h3>
+            <p>C'est le programme qui transcrit l'audio sur ta machine&nbsp;: l'enregistrement ne part nulle part. Sur Mac, avec <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a>, ouvre le Terminal et colle&nbsp;:</p>
+            <span class="cmd wide"><code>brew install whisper-cpp</code><button class="copy" type="button" data-copy="brew install whisper-cpp" aria-label="Copier la commande brew install whisper-cpp">copier</button></span>
+            <p>Sur Windows et Linux, suis les instructions du projet <a href="https://github.com/ggml-org/whisper.cpp" target="_blank" rel="noopener">whisper.cpp</a>. Ensuite, l'app télécharge elle-même le modèle de transcription&nbsp;: <strong>Base</strong> (rapide), <strong>Small</strong> (équilibré) ou <strong>Large v3 Turbo</strong> (le plus précis, plus lourd).</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">02</p>
+            <h3>Crée une matière, puis une note</h3>
+            <p>Entre dans l'espace Cours&nbsp;: le troisième cercle, la touche <kbd>3</kbd>, ou <kbd>Alt</kbd>+<kbd>3</kbd> depuis un autre espace. Crée un dossier pour la matière (par exemple «&nbsp;Microéconomie&nbsp;»), puis une note pour le cours du jour&nbsp;: elle est datée automatiquement.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">03</p>
+            <h3>Importe les diapos</h3>
+            <p>Glisse le PDF du prof sur la note. Les diapos s'ouvrent dans une visionneuse latérale, que tu peux faire défiler pendant le cours.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">04</p>
+            <h3>Enregistre le CM</h3>
+            <p>Lance l'enregistrement et fais avancer les diapos en même temps que le prof (une télécommande de présentation marche aussi)&nbsp;: chaque diapo affichée est horodatée. Un moment clé&nbsp;? Le bouton <strong>⚑ Important</strong>, ou <kbd>Alt</kbd>+<kbd>M</kbd>. L'enregistrement est sauvegardé toutes les 5 secondes&nbsp;: si l'app se ferme, rien n'est perdu.</p>
+            <p><strong>Demande d'abord l'accord de l'enseignant</strong>&nbsp;: enregistrer un cours sans son autorisation n'est pas permis, et l'enregistrement est pour ton usage personnel.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">05</p>
+            <h3>Transcris, puis «&nbsp;Rédiger le cours&nbsp;»</h3>
+            <p>La transcription rattache chaque phrase à la diapo affichée à ce moment, et repère les passages où le prof insiste («&nbsp;retenez&nbsp;», «&nbsp;ça tombera à l'examen&nbsp;»). Clique sur une phrase pour la réécouter, ou sur ▶ à côté d'une diapo pour réécouter ce qui s'est dit.</p>
+            <p>«&nbsp;Rédiger le cours&nbsp;» combine diapos, oral et tes notes en un cours rédigé. Chaque paragraphe renvoie à sa diapo (<span class="inline-code">[diapo 12]</span>)&nbsp;; ce qui vient de l'oral est marqué «&nbsp;(oral)&nbsp;», ce que le copilote ajoute «&nbsp;(hors diapos)&nbsp;», et les points sur lesquels le prof a insisté ressortent sous «&nbsp;Dit en cours, à retenir&nbsp;». Sans enregistrement, il rédige à partir des diapos et de tes notes.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">06</p>
+            <h3>Fiche, cartes, révision</h3>
+            <p>«&nbsp;Fiche + cartes&nbsp;» crée une fiche d'une page (l'essentiel, notions clés, pièges, questions d'examen) et 8 à 20 cartes question/réponse. Le copilote signale aussi ce qui est flou dans tes notes. «&nbsp;M'interroger&nbsp;» lance un quiz corrigé, «&nbsp;Expliquer simplement&nbsp;» reprend une notion.</p>
+            <p>Pour réviser, choisis tout, une matière ou une note. <kbd>Espace</kbd> montre la réponse, <kbd>1</kbd> à <kbd>4</kbd> la note&nbsp;; la carte revient selon des boîtes à 1, 3, 7, 14, 30, 60 et 120 jours. Le compteur «&nbsp;cartes à revoir aujourd'hui&nbsp;» te dit où tu en es.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="block-title">Bonnes pratiques</h3>
+      <p class="block-intro">Cinq réflexes qui évitent la plupart des problèmes.</p>
+      <ul class="practices">
+        <li class="practice">
+          <span class="practice-num">01</span>
+          <h4>Commence en Planifier + Sur demande</h4>
+          <p>L'IA propose sans modifier, et te demande avant chaque action. Tu gardes le contrôle le temps de comprendre comment elle travaille.</p>
+        </li>
+        <li class="practice">
+          <span class="practice-num">02</span>
+          <h4>Travaille sur une copie</h4>
+          <p>Pour tes premières tâches, choisis une copie du dossier ou un dossier de test. Si quelque chose ne te plaît pas, ton vrai travail reste intact.</p>
+        </li>
+        <li class="practice">
+          <span class="practice-num">03</span>
+          <h4>Sois précis dans ta demande</h4>
+          <p>Indique le fichier concerné et le résultat attendu. « Corrige les fautes dans rapport.md » marche mieux que « améliore le dossier ».</p>
+        </li>
+        <li class="practice">
+          <span class="practice-num">04</span>
+          <h4>Surveille le coût</h4>
+          <p>Commence avec un modèle gratuit. Si tu utilises un modèle payant, regarde le coût en haut à droite et fixe une limite de dépense chez ton fournisseur.</p>
+        </li>
+        <li class="practice">
+          <span class="practice-num">05</span>
+          <h4>Ne partage jamais ta clé API</h4>
+          <p>C'est un mot de passe personnel. Ne l'envoie pas dans un groupe, ne la colle pas dans un devoir et ne la mets pas sur internet. Si elle fuite, supprime-la et crée-en une nouvelle.</p>
+        </li>
+      </ul>
+
+      <h3 class="block-title" id="depannage">Ça ne marche pas ?</h3>
+      <p class="block-intro">Les problèmes les plus fréquents, et la solution.</p>
+      <div class="faq">
+        <details>
+          <summary>« OpenCode 2 est introuvable »</summary>
+          <div class="faq-a">Ono-Sendai a besoin de l'app OpenCode en version 2 ou plus. Installe-la depuis <a href="https://opencode.ai" target="_blank" rel="noopener">opencode.ai</a>, ouvre-la au moins une fois, puis relance Ono-Sendai.</div>
+        </details>
+        <details>
+          <summary>La liste des modèles est vide</summary>
+          <div class="faq-a">Aucun fournisseur n'est connecté dans OpenCode. Ouvre l'app OpenCode, connecte un fournisseur comme OpenCode Zen ou OpenRouter, puis relance Ono-Sendai.</div>
+        </details>
+        <details>
+          <summary>macOS bloque l'app</summary>
+          <div class="faq-a">C'est normal : l'app n'est pas signée par Apple. Revois l'étape 3, onglet « Mac Apple Silicon » : Réglages Système, Confidentialité et sécurité, puis « Ouvrir quand même ». Si macOS dit que l'app « est endommagée », utilise la commande <span class="inline-code">xattr</span> indiquée dans cette même étape.</div>
+        </details>
+        <details>
+          <summary>La page localhost:7777 ne s'ouvre pas</summary>
+          <div class="faq-a">Vérifie que la fenêtre noire est toujours ouverte. Si tu l'as fermée, relance <span class="inline-code">start.bat</span> sur Windows, ou <span class="inline-code">sh start.sh</span> sur Mac et Linux. Attends quelques secondes, puis ouvre <span class="inline-code">http://localhost:7777</span> dans ton navigateur. Si la fenêtre noire affiche « Node.js est introuvable », reprends l'installation de Node.js.</div>
+        </details>
+        <details>
+          <summary>Le bouton des modifications n'apparaît pas</summary>
+          <div class="faq-a">Le dossier n'est pas suivi par git. Demande à l'IA : « initialise git dans ce dossier ». Les prochaines modifications s'afficheront dans le bouton.</div>
+        </details>
+        <details>
+          <summary>Ça coûte combien ?</summary>
+          <div class="faq-a">Avec un modèle gratuit, rien du tout. Avec un modèle payant, une petite tâche coûte généralement quelques centimes. Le prix exact dépend du modèle et de la longueur de la tâche. Regarde le coût en haut à droite et la limite de dépense de ton fournisseur.</div>
+        </details>
+        <details>
+          <summary>Les modes Recherche et Discussion n'apparaissent pas</summary>
+          <div class="faq-a">C'est corrigé dans la nouvelle version : quand OpenCode répond trop tôt au démarrage, l'app redemande la liste des modes. Télécharge la dernière version d'Ono-Sendai depuis <a href="[LIEN DE TÉLÉCHARGEMENT]" target="_blank" rel="noopener">[LIEN DE TÉLÉCHARGEMENT]</a> et remplace l'ancienne.</div>
+        </details>
+        <details>
+          <summary>Où sont mes fichiers ?</summary>
+          <div class="faq-a">Dans l'espace IA, l'agent travaille dans le dossier de projet que tu as choisi, et nulle part ailleurs. Ton mémoire, lui, est dans le dossier choisi au premier passage dans l'espace Mémoire : un fichier Markdown par section dans <span class="inline-code">manuscrit/</span>, tes notes dans <span class="inline-code">atelier/</span>, ta bibliographie dans <span class="inline-code">sources/bibliotheque.json</span>. Ce que tu supprimes depuis l'app est rangé dans <span class="inline-code">.ono/corbeille/</span>. Pas de cloud : les fichiers restent sur ta machine. Seul ce que tu demandes à l'IA part chez le fournisseur du modèle choisi.</div>
+        </details>
+        <details>
+          <summary>Puis-je utiliser Obsidian en même temps ?</summary>
+          <div class="faq-a">Oui. Ouvre le dossier du mémoire comme coffre dans Obsidian : ce sont les mêmes fichiers Markdown. Ce que tu modifies dans Obsidian apparaît dans Ono-Sendai, l'app suit les changements faits ailleurs. Tu peux aussi synchroniser le dossier ou le versionner avec git.</div>
+        </details>
+        <details>
+          <summary>Ma source a un titre en majuscules</summary>
+          <div class="faq-a">La notice venue de doi.org est parfois écrite tout en majuscules. APA 7 veut les titres d'articles en minuscules, sauf la première lettre et les noms propres : aucun outil ne peut deviner les noms propres à ta place. Ouvre la source dans la vue « Sources » et corrige le titre dans la fiche ; la bibliographie se met à jour.</div>
+        </details>
+      </div>
+
+      <aside class="shortcuts usage-shortcuts" aria-labelledby="shortcuts-title">
+        <div class="sc-head">
+          <span id="shortcuts-title">Raccourcis</span>
+          <span>Clavier</span>
+        </div>
+        <p class="sc-group">Partout</p>
+        <dl class="sc-list">
+          <div class="sc-row">
+            <dt><kbd>1</kbd><span class="sc-plus">/</span><kbd>2</kbd><span class="sc-plus">/</span><kbd>3</kbd></dt>
+            <dd>choisir IA, Mémoire ou Cours au lancement</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>Alt</kbd><span class="sc-plus">+</span><kbd>1</kbd><span class="sc-plus">/</span><kbd>2</kbd><span class="sc-plus">/</span><kbd>3</kbd></dt>
+            <dd>passer d'un espace à l'autre</dd>
+          </div>
+        </dl>
+        <p class="sc-group">Espace IA</p>
+        <dl class="sc-list">
+          <div class="sc-row">
+            <dt><kbd>Entrée</kbd></dt>
+            <dd>envoyer</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>Maj</kbd><span class="sc-plus">+</span><kbd>Entrée</kbd></dt>
+            <dd>aller à la ligne</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>Alt</kbd><span class="sc-plus">+</span><kbd>N</kbd></dt>
+            <dd>nouvelle tâche</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>Échap</kbd></dt>
+            <dd>arrêter l'agent</dd>
+          </div>
+        </dl>
+        <p class="sc-group">Espace Mémoire</p>
+        <dl class="sc-list">
+          <div class="sc-row">
+            <dt><span class="sc-code">[@</span></dt>
+            <dd>proposer tes sources</dd>
+          </div>
+          <div class="sc-row">
+            <dt><span class="sc-code">[[</span></dt>
+            <dd>proposer tes notes et sections</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>Cmd</kbd><span class="sc-plus">+</span><kbd>B</kbd><span class="sc-plus">/</span><kbd>Cmd</kbd><span class="sc-plus">+</span><kbd>I</kbd></dt>
+            <dd>gras / italique</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>Échap</kbd></dt>
+            <dd>revenir à la mise en page, ou quitter la présentation de la carte</dd>
+          </div>
+        </dl>
+        <p class="sc-group">Espace Cours</p>
+        <dl class="sc-list">
+          <div class="sc-row">
+            <dt><kbd>Alt</kbd><span class="sc-plus">+</span><kbd>M</kbd></dt>
+            <dd>marquer un moment ⚑ Important</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>Espace</kbd></dt>
+            <dd>voir la réponse d'une carte</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>1</kbd><span class="sc-plus">–</span><kbd>4</kbd></dt>
+            <dd>noter la carte</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <svg viewBox="0 0 1027 1000" aria-hidden="true" focusable="false"><path fill="currentColor" d="M135 0 L315 0 L1027 1000 L847 1000 L483 489 L171 1000 L0 1000 L391 360 Z"/></svg>
+      <p>Ono-Sendai — Cours, Mémoire et IA, une interface pour OpenCode</p>
+    </div>
+    <nav class="footer-links" aria-label="Liens de pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="[LIEN DU DÉPÔT]">Code source</a>
+      <a href="https://opencode.ai" target="_blank" rel="noopener">OpenCode</a>
+    </nav>
+    <span class="footer-local">Local · 127.0.0.1</span>
+  </div>
+</footer>
+</body>
+</html>
