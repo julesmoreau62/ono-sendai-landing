@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ono-Sendai — cours, mémoire et agents IA dans une seule app, sur ta machine</title>
-<meta name="description" content="App gratuite et open source pour étudiant·es : tes diapos et l'enregistrement du CM deviennent cours rédigé, fiche et cartes de révision ; ton mémoire est relu et cité en APA 7 ; tes projets de code avancent avec des agents IA. Local-first, fichiers Markdown, transcription hors ligne.">
+<meta name="description" content="App gratuite et open source pour étudiant·es : tes diapos et l'enregistrement du CM deviennent cours rédigé, fiche et cartes de révision ; ton mémoire est relu et cité en APA 7 ; tes PDF deviennent cherchables ; tes projets de code avancent avec des agents IA. Local-first, fichiers Markdown, transcription hors ligne.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -54,6 +54,7 @@
     <nav class="nav" aria-label="Navigation principale">
       <a href="#cours">Cours</a>
       <a href="#memoire">Mémoire</a>
+      <a href="#bibliotheque">Bibliothèque</a>
       <a href="#ia">IA</a>
       <a href="#local">Données</a>
       <a href="#faq">FAQ</a>
@@ -82,29 +83,21 @@
     </div>
   </section>
 
-  <section class="section" id="probleme" aria-labelledby="probleme-title">
+  <section class="section section-problem" id="probleme" aria-labelledby="probleme-title">
     <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Le problème</p>
-          <h2 id="probleme-title">Un semestre, six endroits différents.</h2>
-        </div>
-        <p class="section-note">Chacun fait bien son travail. Mais c'est toi qui recopies, exportes et recolles de l'un à l'autre.</p>
-      </div>
+      <p class="eyebrow">Le problème</p>
+      <h2 id="probleme-title">Un semestre, six onglets.</h2>
 
-      <ul class="scatter reveal" aria-label="Le parcours habituel d'un semestre">
-        <li><span class="scatter-what">Diapos</span><span class="scatter-where">Un PDF</span><span class="scatter-pain">Lues une fois, oubliées dans Téléchargements.</span></li>
-        <li><span class="scatter-what">Le CM</span><span class="scatter-where">Un mémo vocal</span><span class="scatter-pain">1 h 30 d'audio que personne ne réécoute.</span></li>
-        <li><span class="scatter-what">Notes</span><span class="scatter-where">Notion</span><span class="scatter-pain">Sans lien avec la diapo ni avec ce qu'a dit le prof.</span></li>
-        <li><span class="scatter-what">Révisions</span><span class="scatter-where">Anki</span><span class="scatter-pain">Des cartes à taper une par une.</span></li>
-        <li><span class="scatter-what">Mémoire</span><span class="scatter-where">Word + Zotero</span><span class="scatter-pain">Des citations à vérifier une par une, la veille du rendu.</span></li>
-        <li><span class="scatter-what">IA</span><span class="scatter-where">Un onglet ChatGPT</span><span class="scatter-pain">Ne connaît pas tes sources, et peut inventer une référence.</span></li>
+      <ul class="strip reveal" aria-label="Le parcours habituel d'un semestre">
+        <li>Diapos PDF</li>
+        <li>Mémo vocal</li>
+        <li>Notion</li>
+        <li>Anki</li>
+        <li>Word + Zotero</li>
+        <li>ChatGPT</li>
       </ul>
 
-      <div class="answer reveal">
-        <p class="answer-k">Avec Ono-Sendai</p>
-        <p>Un seul endroit, trois espaces, et des fichiers ordinaires dans tes dossiers. Le copilote travaille sur <strong>tes</strong> diapos, <strong>ton</strong> enregistrement, <strong>ta</strong> bibliothèque&nbsp;: il signale ce qu'il ajoute et ne change rien sans toi.</p>
-      </div>
+      <p class="big-answer reveal">Une seule app, sur ta machine.<br><span>Et un copilote qui travaille sur <em>tes</em> sources.</span></p>
     </div>
   </section>
 
@@ -115,7 +108,6 @@
           <p class="eyebrow">01 — Trois espaces</p>
           <h2 id="espaces-title">Prendre ses cours, écrire son mémoire, coder ses projets.</h2>
         </div>
-        <p class="section-note">Au lancement, trois cercles&nbsp;: tu choisis d'un clic ou avec <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd>. Ensuite, <kbd>Alt</kbd>&nbsp;+&nbsp;le chiffre pour passer de l'un à l'autre.</p>
       </div>
 
       <div class="duo trio reveal">
@@ -127,16 +119,10 @@
             </span>
             <div>
               <h3 class="space-name" id="space-cours">Cours</h3>
-              <p class="space-key"><kbd>3</kbd><span class="sc-plus">ou</span><kbd>Alt</kbd><span class="sc-plus">+</span><kbd>3</kbd></p>
             </div>
           </div>
-          <p class="space-lede">Tu suis le CM&nbsp;: l'app enregistre et note quelle diapo est affichée. Le soir, tu as un cours rédigé, une fiche et des cartes de révision.</p>
+          <p class="space-lede">Tu suis le CM. Le soir, tu as un cours rédigé, une fiche et des cartes.</p>
           <p class="flow" aria-label="Diapos et oral, puis cours rédigé, fiche et cartes"><b>Diapos PDF</b><i>+</i><b>Oral</b><i>→</i><b>Cours</b><i>→</i><b>Fiche</b><i>→</i><b>Cartes</b></p>
-          <ul class="plan-list">
-            <li>Transcription 100&nbsp;% locale, chaque phrase rattachée à sa diapo.</li>
-            <li>Les moments où le prof insiste, repérés automatiquement.</li>
-            <li>Révision espacée, entièrement au clavier.</li>
-          </ul>
           <a class="space-link" href="#cours">Essayer la démo →</a>
         </article>
 
@@ -148,16 +134,10 @@
             </span>
             <div>
               <h3 class="space-name" id="space-mem">Mémoire</h3>
-              <p class="space-key"><kbd>2</kbd><span class="sc-plus">ou</span><kbd>Alt</kbd><span class="sc-plus">+</span><kbd>2</kbd></p>
             </div>
           </div>
-          <p class="space-lede">Tu écris ton mémoire, le copilote relit à côté&nbsp;: il vérifie une phrase, propose une source de ta bibliothèque, pose les questions du jury.</p>
+          <p class="space-lede">Tu écris. Le copilote relit, source et pose les questions du jury.</p>
           <p class="flow" aria-label="Plan, rédaction, sources, puis export Word ou PDF"><b>Plan</b><i>→</i><b>Rédaction</b><i>+</i><b>Sources</b><i>→</i><b>Word / PDF</b></p>
-          <ul class="plan-list">
-            <li>Citations et bibliographie APA&nbsp;7, sans y penser.</li>
-            <li>Carte mentale tirée du plan, prête pour la soutenance.</li>
-            <li>Export Word et PDF avec page de garde et sommaire.</li>
-          </ul>
           <a class="space-link" href="#memoire">Essayer la démo →</a>
         </article>
 
@@ -169,16 +149,10 @@
             </span>
             <div>
               <h3 class="space-name" id="space-ia">IA</h3>
-              <p class="space-key"><kbd>1</kbd><span class="sc-plus">ou</span><kbd>Alt</kbd><span class="sc-plus">+</span><kbd>1</kbd></p>
             </div>
           </div>
-          <p class="space-lede">Tu décris une tâche en français, un agent la réalise dans ton dossier&nbsp;: un site, un portfolio, un script, un plan de projet.</p>
+          <p class="space-lede">Tu décris une tâche en français. Un agent la réalise dans ton dossier.</p>
           <p class="flow" aria-label="Demande, puis plan, autorisation et diff"><b>Demande</b><i>→</i><b>Plan</b><i>→</i><b>Autorisation</b><i>→</i><b>Diff</b></p>
-          <ul class="plan-list">
-            <li>Quatre agents&nbsp;: Coder, Planifier, Recherche, Discussion.</li>
-            <li>Le modèle de ton choix, son prix affiché.</li>
-            <li>Tu décides de ce qu'il a le droit de faire sans te demander.</li>
-          </ul>
           <a class="space-link" href="#ia">Voir l'espace IA →</a>
         </article>
       </div>
@@ -192,7 +166,7 @@
           <p class="eyebrow">02 — Espace Cours</p>
           <h2 id="cours-title">Ton CM devient un cours rédigé, une fiche et des cartes.</h2>
         </div>
-        <p class="section-note">Essaie&nbsp;: clique sur une phrase de la transcription, puis sur «&nbsp;Rédiger le cours&nbsp;». Les onglets Fiche et Cartes montrent la suite.</p>
+        <p class="section-note">Essaie&nbsp;: clique sur «&nbsp;Rédiger le cours&nbsp;».</p>
       </div>
 
       <div class="demo cours-demo reveal" id="cours-demo" role="group" aria-label="Démo de l'espace Cours">
@@ -324,48 +298,47 @@
 
       <div class="sub-head">
         <h3>Ce que fait l'espace Cours</h3>
-        <p>Un dossier par matière, une note Markdown par cours, trois onglets&nbsp;: Note, Fiche, Cartes.</p>
       </div>
       <div class="ia-grid reveal">
         <article class="ia-cell">
           <p class="f-index">01</p>
           <h3 class="f-title">Diapos importées</h3>
-          <p class="f-desc">Glisse le PDF du prof. Chaque paragraphe du cours rédigé renvoie à sa diapo, qui s'ouvre dans une visionneuse à côté.</p>
+          <p class="f-desc">Chaque paragraphe renvoie à sa diapo.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">02</p>
           <h3 class="f-title">Enregistrement du CM</h3>
-          <p class="f-desc">Chaque diapo affichée est horodatée, même avec une télécommande de présentation. Sauvegarde toutes les 5&nbsp;s&nbsp;: rien n'est perdu si l'app se ferme.</p>
+          <p class="f-desc">Chaque diapo affichée est horodatée.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">03</p>
           <h3 class="f-title">⚑ Important</h3>
-          <p class="f-desc">Un bouton, ou <kbd>Alt</kbd>+<kbd>M</kbd>, pour marquer un moment clé pendant le cours.</p>
+          <p class="f-desc"><kbd>Alt</kbd>+<kbd>M</kbd> marque un moment clé.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">04</p>
           <h3 class="f-title">Transcription locale</h3>
-          <p class="f-desc">whisper.cpp, modèles Base, Small ou Large v3 Turbo téléchargés par l'app. Le vocabulaire des diapos aide à reconnaître les termes du cours.</p>
+          <p class="f-desc">whisper.cpp, sans rien envoyer.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">05</p>
           <h3 class="f-title">Le prof insiste&nbsp;?</h3>
-          <p class="f-desc">Les «&nbsp;retenez&nbsp;», «&nbsp;ça tombera à l'examen&nbsp;» sont repérés et ressortent dans le cours&nbsp;: «&nbsp;Dit en cours, à retenir&nbsp;».</p>
+          <p class="f-desc">«&nbsp;Ça tombera à l'examen&nbsp;» ressort dans le cours.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">06</p>
           <h3 class="f-title">Fiche + cartes</h3>
-          <p class="f-desc">Une fiche d'une page (essentiel, notions, pièges, questions d'examen) et 8 à 20 cartes question/réponse, en un clic.</p>
+          <p class="f-desc">Une fiche d'une page et 8 à 20 cartes, en un clic.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">07</p>
           <h3 class="f-title">M'interroger</h3>
-          <p class="f-desc">Un quiz corrigé question par question, «&nbsp;Expliquer simplement&nbsp;», et tes propres questions sur la note.</p>
+          <p class="f-desc">Un quiz corrigé, question par question.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">08</p>
           <h3 class="f-title">Répétition espacée</h3>
-          <p class="f-desc">Des boîtes à 1, 3, 7, 14, 30, 60 et 120 jours. Révise tout, une matière ou une note, au clavier&nbsp;: <kbd>Espace</kbd>, <kbd>1</kbd> à <kbd>4</kbd>.</p>
+          <p class="f-desc">Au clavier&nbsp;: <kbd>Espace</kbd>, puis <kbd>1</kbd> à <kbd>4</kbd>.</p>
         </article>
       </div>
     </div>
@@ -600,84 +573,125 @@
   </section>
 
 
+  <section class="section" id="bibliotheque" aria-labelledby="biblio-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">04 — Bibliothèque</p>
+          <h2 id="biblio-title">Tes PDF deviennent cherchables. Le copilote les cite à la page.</h2>
+        </div>
+        <p class="section-note">Glisse tes ouvrages et articles&nbsp;: Ono-Sendai les lit une fois, sur ta machine.</p>
+      </div>
+
+      <div class="ask reveal" role="img" aria-label="Aperçu de « Demande à Ono » : une question, les trois sources interrogées (ouvrages, mémoire, cours), puis une réponse qui renvoie à la page d'un ouvrage, à une section du mémoire et à une note de cours.">
+        <div class="ask-panel" aria-hidden="true">
+          <div class="ask-top"><span class="ask-k">Demande à Ono</span><span><kbd>⌘</kbd> <kbd>K</kbd></span></div>
+          <p class="ask-q">Comment fidéliser les bénévoles d'un club amateur&nbsp;?</p>
+          <div class="ask-in"><span>Chercher dans</span><span class="chip on">Ouvrages</span><span class="chip on">Mémoire</span><span class="chip on">Cours</span></div>
+          <p class="ask-a">La reconnaissance compte souvent plus que les avantages matériels <span class="ref-o">O2, p.&nbsp;53</span>. Ton chapitre 2 fait déjà le lien avec l'appartenance au club <span class="ref-d">M1</span>, et le CM4 en donnait un exemple <span class="ref-d">C3</span>.</p>
+        </div>
+        <ul class="ask-hits" aria-hidden="true">
+          <li><span class="hit-src">Gestion du bénévolat sportif.pdf · p.&nbsp;53</span><span class="hit-txt">… la <mark>reconnaissance</mark> des bénévoles…</span></li>
+          <li><span class="hit-src">Sport Management.pdf · p.&nbsp;212 <i>sens</i></span><span class="hit-txt">… <mark>volunteer retention</mark> depends on…</span></li>
+          <li><span class="hit-src">Mémoire · 2.1 L'appartenance</span><span class="hit-txt">… le sentiment d'<mark>appartenance</mark>…</span></li>
+        </ul>
+      </div>
+      <p class="legend">Exemple. Dans l'app, un clic sur <span class="inline-code">O2, p.&nbsp;53</span> ouvre le PDF à cette page.</p>
+
+      <div class="trio-facts reveal">
+        <article>
+          <h3>Par les mots et par le sens</h3>
+          <p>«&nbsp;Parrainage&nbsp;» trouve aussi <em>sponsorship</em>.</p>
+        </article>
+        <article>
+          <h3>À la page près</h3>
+          <p>Chaque réponse renvoie à sa source.</p>
+        </article>
+        <article>
+          <h3>Rien ne sort</h3>
+          <p>Lecture et index sur ta machine.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
   <section class="section" id="ia" aria-labelledby="ia-title">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">04 — Espace IA</p>
+          <p class="eyebrow">05 — Espace IA</p>
           <h2 id="ia-title">Tes projets de code, pilotés par des agents IA.</h2>
         </div>
-        <p class="section-note">Un site, un portfolio, un script d'analyse&nbsp;: le moteur est OpenCode, Ono-Sendai en est le poste de pilotage.</p>
+        <p class="section-note">Le moteur est OpenCode. Ono-Sendai en est le poste de pilotage.</p>
       </div>
 
       <div class="ia-grid reveal">
         <article class="ia-cell">
           <p class="f-index">01</p>
           <h3 class="f-title">Projets et tâches</h3>
-          <p class="f-desc">Chaque dossier de projet a ses propres tâches, partagées avec l'app OpenCode.</p>
+          <p class="f-desc">Un dossier, ses tâches.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">02</p>
           <h3 class="f-title">Quatre agents</h3>
-          <p class="f-desc">Planifier réfléchit sans toucher aux fichiers.</p>
           <div class="chips"><span class="chip">Coder</span><span class="chip on">Planifier</span><span class="chip">Recherche</span><span class="chip">Discussion</span></div>
         </article>
         <article class="ia-cell">
           <p class="f-index">03</p>
           <h3 class="f-title">Choix du modèle</h3>
-          <p class="f-desc">Toute la liste d'OpenCode, avec le prix par million de tokens. Top 10 hebdo d'OpenRouter, groupe «&nbsp;Gratuits&nbsp;», niveau de réflexion réglable.</p>
+          <p class="f-desc">Son prix affiché, et des gratuits.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">04</p>
           <h3 class="f-title">Autorisations</h3>
-          <p class="f-desc">Modifiable pendant que l'agent travaille&nbsp;; les demandes arrivent en cartes dans le fil.</p>
+          <p class="f-desc">Tu décides de ce qu'il peut faire seul.</p>
           <div class="chips"><span class="chip on">Sur demande</span><span class="chip">Modifs auto</span><span class="chip">Auto</span></div>
         </article>
         <article class="ia-cell">
           <p class="f-index">05</p>
           <h3 class="f-title">Mods</h3>
-          <p class="f-desc">Des consignes métier en fichiers .md (marketing, management du sport, finance…), à cocher pour guider n'importe quel modèle. Tu peux ajouter les tiennes.</p>
+          <p class="f-desc">Des consignes métier à cocher&nbsp;: marketing, sport, finance…</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">06</p>
           <h3 class="f-title">Diff et git</h3>
-          <p class="f-desc">Le détail des modifications, fichier par fichier. Suivi git et commit depuis l'interface.</p>
+          <p class="f-desc">Chaque modification, fichier par fichier.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">07</p>
           <h3 class="f-title">Terminal et commandes</h3>
-          <p class="f-desc">Un terminal intégré, et l'onglet «&nbsp;Commandes de l'agent&nbsp;» qui montre ce qu'il exécute en direct.</p>
+          <p class="f-desc">Ce que l'agent exécute, en direct.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">08</p>
           <h3 class="f-title">Sous-agents</h3>
-          <p class="f-desc">Les tâches qu'il délègue apparaissent sous la tâche principale, avec ce qu'elles font.</p>
+          <p class="f-desc">Ce qu'il délègue, sous la tâche.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">09</p>
           <h3 class="f-title">Pièces jointes et export</h3>
-          <p class="f-desc">Glisser-déposer des fichiers dans la tâche. Exporter une conversation complète en Markdown.</p>
+          <p class="f-desc">Glisse un fichier, exporte en Markdown.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">10</p>
           <h3 class="f-title">Annulation</h3>
-          <p class="f-desc"><kbd>Échap</kbd> arrête l'agent. Annuler une demande remet les fichiers dans leur état d'avant.</p>
+          <p class="f-desc"><kbd>Échap</kbd> arrête, et tout revient.</p>
         </article>
         <article class="ia-cell">
           <p class="f-index">11</p>
           <h3 class="f-title">Coût</h3>
-          <p class="f-desc">Le coût de chaque tâche, et le total du jour.</p>
+          <p class="f-desc">Par tâche, et le total du jour.</p>
         </article>
         <article class="ia-cell link">
           <p class="f-index">+</p>
           <h3 class="f-title">Le copilote du Mémoire</h3>
-          <p class="f-desc">Chaque section du mémoire a sa tâche ici, en lecture seule sur le dossier du mémoire. «&nbsp;Tâche&nbsp;↗&nbsp;» y mène.</p>
+          <p class="f-desc">Chaque section a sa tâche ici.</p>
         </article>
       </div>
 
       <div class="sub-head" id="apercu">
         <h3>Une tâche, de bout en bout</h3>
-        <p>Le fil, les autorisations, les sous-agents, le diff et le coût au même endroit.</p>
       </div>
 
       <div class="app reveal" role="img" aria-label="Aperçu de l'interface de l'espace IA : une tâche en cours, une demande d'autorisation, deux sous-agents, un diff de deux fichiers et le coût de la tâche.">
@@ -808,7 +822,7 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">05 — Le copilote</p>
+          <p class="eyebrow">06 — Le copilote</p>
           <h2 id="copilote-title">Un copilote, pas un tricheur.</h2>
         </div>
         <p class="section-note">Il vérifie, relit, contredit, interroge. Il ne fait pas le travail à ta place, et ce sont les mêmes règles dans les trois espaces.</p>
@@ -826,7 +840,7 @@
         </article>
         <article class="rule">
           <h3>Il cite tes sources, pas les siennes</h3>
-          <p>Pour sourcer, il ne propose que ce qui est dans ta bibliothèque. S'il ne trouve pas d'appui, il le dit au lieu d'inventer une référence.</p>
+          <p>Il cherche dans tes ouvrages et renvoie à la page exacte. S'il ne trouve pas d'appui, il le dit au lieu d'inventer.</p>
           <p class="ex">«&nbsp;Aucune source de ta bibliothèque ne donne ce chiffre.&nbsp;»</p>
         </article>
         <article class="rule">
@@ -843,7 +857,7 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">06 — Tes données</p>
+          <p class="eyebrow">07 — Tes données</p>
           <h2 id="local-title">Tout tourne sur ta machine. Tes fichiers restent des fichiers.</h2>
         </div>
         <p class="section-note">Pas de compte Ono-Sendai, pas de serveur distant, pas de format fermé.</p>
@@ -855,7 +869,7 @@
           <div class="mac-grid">
             <div class="unit"><b>Ono-Sendai</b><span>Interface et serveur local, invisible depuis le réseau.</span><code>127.0.0.1</code></div>
             <div class="unit"><b>Tes dossiers</b><span>Notes, mémoire, sources, cartes&nbsp;: en clair, là où tu les as mis.</span><code>.md · .json</code></div>
-            <div class="unit"><b>whisper.cpp</b><span>Transcrit l'audio du CM hors ligne. L'enregistrement ne sort pas.</span><code>audio → texte</code></div>
+            <div class="unit"><b>whisper.cpp · bge-m3</b><span>Transcrit le CM et indexe tes PDF, hors ligne.</span><code>audio · PDF → texte</code></div>
           </div>
         </div>
         <div class="wire" aria-hidden="true"><i></i><span>le passage que<br>tu envoies</span></div>
@@ -865,15 +879,15 @@
       <div class="facts reveal">
         <article class="fact">
           <h3>Des fichiers ordinaires</h3>
-          <p>Markdown et JSON dans des dossiers que tu choisis. Lisibles sans l'app, aujourd'hui comme dans dix ans.</p>
+          <p>Markdown et JSON, lisibles sans l'app.</p>
         </article>
         <article class="fact">
           <h3>Compatible avec tes outils</h3>
-          <p>Ouvre le même dossier dans Obsidian, importe Zotero (BibTeX, CSL JSON), exporte vers Word, versionne avec git.</p>
+          <p>Obsidian, Zotero, Word, git.</p>
         </article>
         <article class="fact">
-          <h3>Rien n'est effacé pour de bon</h3>
-          <p>Ce que tu supprimes depuis l'app part dans une corbeille. Le CM est sauvegardé toutes les 5 secondes pendant l'enregistrement.</p>
+          <h3>Sauvegardé toutes les heures</h3>
+          <p>Chaque note et section garde ses versions. Copie possible vers iCloud ou un disque externe.</p>
         </article>
       </div>
       <div class="chips" style="margin-top:14px"><span class="chip on">Local-first</span><span class="chip">Markdown</span><span class="chip">Obsidian</span><span class="chip">Zotero</span><span class="chip">Word</span><span class="chip">git</span><span class="chip">MIT</span></div>
@@ -884,7 +898,7 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">07 — Et mes outils actuels&nbsp;?</p>
+          <p class="eyebrow">08 — Et mes outils actuels&nbsp;?</p>
           <h2 id="comparer-title">Ce que tu utilises déjà, et ce qu'Ono-Sendai fait autrement.</h2>
         </div>
         <p class="section-note">Ces outils sont excellents dans leur domaine. Ono-Sendai ne les remplace pas tous&nbsp;: il en relie plusieurs.</p>
@@ -922,7 +936,7 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">08 — Installation</p>
+          <p class="eyebrow">09 — Installation</p>
           <h2 id="installer-title">Prêt en un quart d'heure environ.</h2>
         </div>
         <p class="section-note">Jamais ouvert un terminal&nbsp;? Le <a href="guide.html">guide pas à pas</a> détaille chaque clic.</p>
@@ -973,7 +987,7 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">09 — Questions</p>
+          <p class="eyebrow">10 — Questions</p>
           <h2 id="faq-title">Questions fréquentes</h2>
         </div>
         <p class="section-note">Un problème d'installation&nbsp;? La section <a href="guide.html#depannage">dépannage du guide</a> couvre les cas courants.</p>
@@ -989,7 +1003,7 @@
         </details>
         <details>
           <summary>Mes cours et mon mémoire partent-ils sur internet&nbsp;?</summary>
-          <div class="faq-a">Tes fichiers restent dans tes dossiers et l'app n'écoute que sur 127.0.0.1. L'audio des CM est transcrit sur ta machine par whisper.cpp. Seul le texte que tu demandes au copilote de traiter est envoyé, au fournisseur du modèle que tu as choisi.</div>
+          <div class="faq-a">Tes fichiers restent dans tes dossiers et l'app n'écoute que sur 127.0.0.1. L'audio des CM est transcrit, et tes PDF indexés, sur ta machine. Seul le texte que tu demandes au copilote de traiter est envoyé, au fournisseur du modèle que tu as choisi.</div>
         </details>
         <details>
           <summary>Faut-il savoir coder&nbsp;?</summary>

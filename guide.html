@@ -36,6 +36,7 @@
       <a href="#premiere-tache">IA</a>
       <a href="#premier-memoire">Mémoire</a>
       <a href="#premier-cours">Cours</a>
+      <a href="#bibliotheque">Bibliothèque</a>
       <a href="#depannage">Dépannage</a>
     </nav>
     <a class="btn ghost sm header-cta" href="index.html">← Accueil</a>
@@ -575,6 +576,107 @@
         </li>
       </ol>
 
+      <h3 class="block-title" id="bibliotheque">Ta bibliothèque</h3>
+      <p class="block-intro">Tes ouvrages et articles en PDF, lus une fois par Ono-Sendai, puis cherchables passage par passage. Les copilotes du Mémoire et des Cours s'appuient dessus, avec la source et la page.</p>
+
+      <ol class="tutorial">
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">01</p>
+            <h3>Ouvre la Bibliothèque et choisis un dossier</h3>
+            <p>La Bibliothèque n'est pas sur l'écran de choix&nbsp;: une fois dans l'app, ouvre-la depuis l'interrupteur en haut, ou avec <kbd>Alt</kbd>+<kbd>4</kbd>. Au premier passage, choisis le dossier où sont tes PDF (les sous-dossiers comptent aussi).</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">02</p>
+            <h3>Ajoute tes PDF</h3>
+            <p>Glisse-les sur l'espace, utilise «&nbsp;Ajouter des PDF&nbsp;», ou dépose-les directement dans le dossier depuis le Finder&nbsp;: l'app les voit arriver. Chaque PDF est lu en arrière-plan (quelques secondes pour un livre de 300 pages), et l'état s'affiche dans la colonne de gauche. Tout reste sur ta machine.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">03</p>
+            <h3>Cherche un passage</h3>
+            <p>Tape une notion, un nom d'auteur ou une question&nbsp;: les passages les plus proches s'affichent, mots trouvés surlignés, avec l'ouvrage et la page. Clique sur la source pour ouvrir le PDF à cette page (<kbd>←</kbd> / <kbd>→</kbd>, <kbd>Échap</kbd> pour fermer). Un clic sur un ouvrage dans la colonne de gauche limite la recherche à lui.</p>
+            <p>«&nbsp;→ Fiche de lecture&nbsp;» ajoute le passage, avec sa page, à la fiche de lecture de l'ouvrage dans l'atelier du mémoire.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">04</p>
+            <h3>Active la recherche par le sens (optionnel)</h3>
+            <p>Par défaut, la recherche se fait par les mots (sans accents ni majuscules, au singulier comme au pluriel). Le bouton «&nbsp;Activer la recherche par le sens&nbsp;» télécharge une fois un modèle multilingue (bge-m3, 570&nbsp;Mo), qui tourne sur ta machine. Une question en français trouve alors aussi les passages anglais qui disent la même chose&nbsp;: «&nbsp;parrainage&nbsp;» trouve <em>sponsorship</em>.</p>
+            <p>Le premier calcul est long (environ une heure pour 6&nbsp;500 pages sur un Mac M1, puis deux à trois minutes par nouveau livre). La recherche par les mots marche pendant ce temps.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">05</p>
+            <h3>Laisse le copilote citer tes ouvrages</h3>
+            <p>Dans le Mémoire (Vérifier, Sourcer, Demander, passe de relecture) et dans les Cours (Fiche + cartes, Expliquer simplement, questions libres), Ono-Sendai envoie avec ta demande les passages les plus proches de ta Bibliothèque. Le copilote y renvoie avec la page exacte (<span class="inline-code">Hoye et al., p. 265</span>)&nbsp;: un clic ouvre le PDF à cette page.</p>
+            <p>Si l'ouvrage n'est pas encore une source du mémoire, «&nbsp;Ajouter … aux sources&nbsp;» ouvre sa fiche préremplie. Vérifie le titre et les auteurs, ajoute la date et l'éditeur&nbsp;: la citation s'ajoute ensuite au passage.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="block-title" id="demande">Demande à Ono</h3>
+      <p class="block-intro">Une conversation qui s'appuie sur tout ce que l'app connaît de toi&nbsp;: tes ouvrages, ton mémoire et tes notes de cours.</p>
+
+      <ol class="tutorial">
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">01</p>
+            <h3>Ouvre le panneau</h3>
+            <p>Clique sur «&nbsp;Demander&nbsp;», à côté de l'interrupteur des espaces, ou fais <kbd>Cmd</kbd>+<kbd>K</kbd> depuis n'importe où.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">02</p>
+            <h3>Pose ta question</h3>
+            <p>À chaque question, Ono-Sendai cherche les passages les plus proches dans la Bibliothèque, le mémoire (texte et atelier) et les cours (notes et fiches), et les envoie avec elle. «&nbsp;Chercher dans&nbsp;»&nbsp;: décoche une source pour l'ignorer.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">03</p>
+            <h3>Suis les renvois</h3>
+            <p>La réponse renvoie à ses sources&nbsp;: <span class="inline-code">[O2, p. 53]</span> ouvre le PDF à la page, <span class="inline-code">[M1]</span> ou <span class="inline-code">[C3]</span> (cadre pointillé) ouvre la section du mémoire ou la note de cours. Ce que tes documents ne disent pas est marqué «&nbsp;(hors documents)&nbsp;».</p>
+            <p>C'est une tâche OpenCode en lecture seule&nbsp;: «&nbsp;Tâche ↗&nbsp;» l'ouvre dans l'espace IA, «&nbsp;Nouvelle&nbsp;» repart de zéro.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="block-title" id="sauvegarde">Tes sauvegardes</h3>
+      <p class="block-intro">Les dossiers du mémoire et des cours sont sauvegardés toutes les heures tant que l'app est ouverte, et dès qu'un dossier est ouvert pour la première fois.</p>
+
+      <ol class="tutorial">
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">01</p>
+            <h3>Vérifie que git est installé</h3>
+            <p>L'historique est un dépôt git à part, rangé dans <span class="inline-code">.ono/sauvegarde.git</span>. Si tu versionnes déjà ton dossier avec git, ton dépôt et tes commits ne sont pas touchés. Sur Mac, s'il manque, colle dans le Terminal&nbsp;:</p>
+            <span class="cmd wide"><code>xcode-select --install</code><button class="copy" type="button" data-copy="xcode-select --install" aria-label="Copier la commande xcode-select --install">copier</button></span>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">02</p>
+            <h3>Reviens à une version</h3>
+            <p>«&nbsp;Versions&nbsp;», au-dessus d'une section ou d'une note, liste ses versions. Choisis-en une, vérifie le texte, puis «&nbsp;Revenir à cette version&nbsp;». L'état actuel est sauvegardé juste avant&nbsp;: tu peux toujours revenir en arrière.</p>
+          </div>
+        </li>
+        <li class="tut-step solo">
+          <div class="tut-copy">
+            <p class="tut-num">03</p>
+            <h3>Ajoute une copie ailleurs (conseillé)</h3>
+            <p>«&nbsp;Sauvegarde&nbsp;», en bas de la colonne de gauche, montre le dernier passage. «&nbsp;Choisir un dossier…&nbsp;» (iCloud Drive, disque externe) y recopie le dossier à chaque sauvegarde. Seuls les fichiers modifiés sont recopiés, et rien n'y est effacé.</p>
+            <p>N'entrent pas dans l'historique&nbsp;: l'audio des cours (la copie le garde), les exports et <span class="inline-code">.ono/</span>. La Bibliothèque n'est pas sauvegardée&nbsp;: ce sont des PDF que tu as déjà.</p>
+          </div>
+        </li>
+      </ol>
+
       <h3 class="block-title">Bonnes pratiques</h3>
       <p class="block-intro">Cinq réflexes qui évitent la plupart des problèmes.</p>
       <ul class="practices">
@@ -638,7 +740,7 @@
         </details>
         <details>
           <summary>Où sont mes fichiers ?</summary>
-          <div class="faq-a">Dans l'espace IA, l'agent travaille dans le dossier de projet que tu as choisi, et nulle part ailleurs. Ton mémoire, lui, est dans le dossier choisi au premier passage dans l'espace Mémoire : un fichier Markdown par section dans <span class="inline-code">manuscrit/</span>, tes notes dans <span class="inline-code">atelier/</span>, ta bibliographie dans <span class="inline-code">sources/bibliotheque.json</span>. Ce que tu supprimes depuis l'app est rangé dans <span class="inline-code">.ono/corbeille/</span>. Pas de cloud : les fichiers restent sur ta machine. Seul ce que tu demandes à l'IA part chez le fournisseur du modèle choisi.</div>
+          <div class="faq-a">Dans l'espace IA, l'agent travaille dans le dossier de projet que tu as choisi, et nulle part ailleurs. Ton mémoire, lui, est dans le dossier choisi au premier passage dans l'espace Mémoire : un fichier Markdown par section dans <span class="inline-code">manuscrit/</span>, tes notes dans <span class="inline-code">atelier/</span>, ta bibliographie dans <span class="inline-code">sources/bibliotheque.json</span>. Ce que tu supprimes depuis l'app est rangé dans <span class="inline-code">.ono/corbeille/</span>. Tes ouvrages restent dans le dossier de la Bibliothèque, avec leur index dans <span class="inline-code">.ono/index/</span>. Pas de cloud : les fichiers restent sur ta machine. Seul ce que tu demandes à l'IA part chez le fournisseur du modèle choisi.</div>
         </details>
         <details>
           <summary>Puis-je utiliser Obsidian en même temps ?</summary>
@@ -647,6 +749,18 @@
         <details>
           <summary>Ma source a un titre en majuscules</summary>
           <div class="faq-a">La notice venue de doi.org est parfois écrite tout en majuscules. APA 7 veut les titres d'articles en minuscules, sauf la première lettre et les noms propres : aucun outil ne peut deviner les noms propres à ta place. Ouvre la source dans la vue « Sources » et corrige le titre dans la fiche ; la bibliographie se met à jour.</div>
+        </details>
+        <details>
+          <summary>Un PDF est marqué « scan, pas de texte »</summary>
+          <div class="faq-a">Le PDF est fait d'images de pages, sans texte sélectionnable. La lecture des scans (OCR) n'est pas encore prise en charge : cherche une version numérique de l'ouvrage, ou passe-le dans un outil d'OCR avant de l'ajouter.</div>
+        </details>
+        <details>
+          <summary>Le numéro de page cité ne correspond pas au livre</summary>
+          <div class="faq-a">Quand le PDF donne la numérotation imprimée, c'est elle qui est citée. Sinon, c'est le numéro de page du PDF : un article de revue qui commence p. 113 sera cité p. 1. Vérifie la page avant de la reporter dans ta citation.</div>
+        </details>
+        <details>
+          <summary>La sauvegarde ne se fait pas</summary>
+          <div class="faq-a">L'historique a besoin de git. Sur Mac, lance <span class="inline-code">xcode-select --install</span> dans le Terminal, puis relance Ono-Sendai. Les réglages de la sauvegarde sont dans <span class="inline-code">~/.ono-sendai/sauvegarde.json</span>.</div>
         </details>
       </div>
 
@@ -664,6 +778,14 @@
           <div class="sc-row">
             <dt><kbd>Alt</kbd><span class="sc-plus">+</span><kbd>1</kbd><span class="sc-plus">/</span><kbd>2</kbd><span class="sc-plus">/</span><kbd>3</kbd></dt>
             <dd>passer d'un espace à l'autre</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>Alt</kbd><span class="sc-plus">+</span><kbd>4</kbd></dt>
+            <dd>ouvrir la Bibliothèque</dd>
+          </div>
+          <div class="sc-row">
+            <dt><kbd>Cmd</kbd><span class="sc-plus">+</span><kbd>K</kbd></dt>
+            <dd>Demande à Ono</dd>
           </div>
         </dl>
         <p class="sc-group">Espace IA</p>
